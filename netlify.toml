@@ -1,7 +1,7 @@
 [build]
   command = "npm install"
-  publish = "public"
-  functions = "netlify/functions"
+  publish = "/opt/build/repo/public"
+  functionsDirectory = "/opt/build/repo/netlify/functions"
 
 [[redirects]]
   from = "/callback"
