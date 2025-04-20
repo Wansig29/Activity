@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tweetify</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Login Screen (Initially visible) -->
+    <div id="login-screen">
+      <h1>Tweetify</h1>
+      <p>Connect your Spotify to start</p>
+      <button id="spotify-login-btn">Login with Spotify</button>
+    </div>
+
+    <!-- Main App (Hidden until login) -->
+    <div id="main-app" class="hidden">
+      <!-- Twitter Feed -->
+      <div class="twitter-panel">
+        <div class="search-box">
+          <input type="text" id="hashtag-input" placeholder="#SearchTwitter">
+          <button id="search-btn">Search</button>
+        </div>
+        <div id="tweet-feed"></div>
+      </div>
+
+      <!-- Spotify Player -->
+      <div class="spotify-panel">
+        <!-- Mini Player -->
+        <div class="mini-player">
+          <img id="mini-album-art" src="https://via.placeholder.com/50" alt="Album Art">
+          <div class="mini-track-info">
+            <span id="mini-track-name">No song playing</span>
+            <span id="mini-artist-name"></span>
+          </div>
+          <div class="mini-controls">
+            <button id="play-pause-mini">▶️</button>
+            <button id="expand-player">↑</button>
+          </div>
+        </div>
+
+        <!-- Expanded Player -->
+        <div class="full-player collapsed">
+          <div class="player-header">
+            <h2>Your Playlists</h2>
+            <button id="collapse-player">↓</button>
+          </div>
+          <div id="playlists"></div>
+          <div class="now-playing">
+            <img id="album-art" src="https://via.placeholder.com/150" alt="Album Art">
+            <div class="track-info">
+              <span id="track-name">No track selected</span>
+              <span id="artist-name"></span>
+            </div>
+            <div class="progress-container">
+              <input type="range" id="progress-bar" min="0" max="100" value="0">
+              <div class="time-display">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:30</span>
+              </div>
+            </div>
+            <div class="controls">
+              <button id="prev-btn">⏮</button>
+              <button id="play-pause-btn">▶️</button>
+              <button id="next-btn">⏭</button>
+              <button id="lyrics-btn">🎤 Lyrics</button>
+            </div>
+          </div>
+          <div class="lyrics-panel hidden">
+            <h3>Lyrics</h3>
+            <pre id="lyrics-text">Select a track to view lyrics</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
